@@ -1,0 +1,35 @@
+{
+  "_comment": [
+    "All tunables live here. null = leave the stock value alone.",
+    "Speeds are Unreal interpolation speeds: HIGHER = SNAPPIER, so 10000 means 'snap to target'.",
+    "Never use 0 or tiny values for lags: the camera arm blends between profiles and near-zero speeds freeze the camera.",
+    "Machine-specific paths go in config.local.json (see config.local.example.json), not here."
+  ],
+  "modName": "SH2_SnappyCamera",
+  "version": "0.9.0",
+  "engineVersion": "UE5_1",
+  "defaults": {
+    "movement": {
+      "controlRotationInterpSpeed": 10000
+    },
+    "camera": {
+      "rotationLag": 1000,
+      "forwardLag": null,
+      "nonForwardLag": null
+    },
+    "aiming": {
+      "enabled": false,
+      "controlRotationInterpSpeed": 10000,
+      "cameraRotationLag": null
+    }
+  },
+  "presets": {
+    "default": {},
+    "reduced-follow-lag": {
+      "camera": { "forwardLag": 40, "nonForwardLag": 40 }
+    },
+    "aiming-experimental": {
+      "aiming": { "enabled": true }
+    }
+  }
+}
