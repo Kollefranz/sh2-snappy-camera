@@ -1,0 +1,46 @@
+[size=5][b]Snappy Camera[/b][/size]
+[b]Removes the sluggish, accelerating third-person camera. Mouse and stick look respond instantly, like a proper shooter.[/b]
+
+[size=4][b]The problem[/b][/size]
+The game doesn't just smooth your mouse input: the camera has its own acceleration. Look speed eases toward where you point (the movement profiles use an interpolation speed of only 2 to 4), and the camera arm adds rotation lag on top. No config tweak or raw input setting touches it, because it lives in the game's data assets.
+
+[size=4][b]What this mod does[/b][/size]
+[list]
+[*]Turns off the look-rotation easing in all walk, sprint, danger and low-health movement profiles.
+[*]Makes the camera arm follow the view instantly.
+[*]Leaves everything else alone: no FOV, no first person, no movement speed changes, no new transitions.
+[/list]
+It is a plain asset override (no scripts, no DLLs, no UE4SS), so it can't crash the game or affect saves.
+
+[size=4][b]Files[/b][/size]
+[list]
+[*][b]Main (default)[/b]: the above. Start here.
+[*][b]Reduced follow lag[/b]: also shortens the small camera-follow delay when you start running.
+[*][b]Aiming (experimental)[/b]: also removes the sluggish turning while aiming ranged weapons, reloading and using the flashlight. [i]Less tested.[/i]
+[/list]
+Install only one file at a time.
+
+[size=4][b]Installation[/b][/size]
+[list=1]
+[*]Go to [font=Courier New]...\SILENT HILL 2\SHProto\Content\Paks[/font] and create a folder called [font=Courier New]~mods[/font] if it isn't there.
+[*]Copy the three files ([font=Courier New].pak[/font], [font=Courier New].ucas[/font], [font=Courier New].utoc[/font]) into it.
+[*]Launch the game.
+[/list]
+To uninstall, delete the three files.
+
+[size=4][b]Compatibility[/b][/size]
+[list]
+[*]Not compatible with mods that edit [font=Courier New]ChPlay_CameraProfiles_DA[/font] or [font=Courier New]ChPlay_MovementSettings_DA[/font], such as first-person camera mods. The last one loaded wins.
+[*]Made for Steam build 17080069 (UE 5.1). A game update that changes those assets may need a new version.
+[/list]
+
+[size=4][b]Make your own values[/b][/size]
+All values live in one config file and the mod is rebuilt from it with the included tooling. Presets are just entries in [font=Courier New]config.json[/font]. Source and build instructions: https://github.com/kollefranz/sh2-snappy-camera
+
+[size=4][b]FAQ[/b][/size]
+[b]Why not set the lag to 0?[/b] The camera arm blends its lag between walk and sprint profiles, and the game caches copies of the values. Mixing 0 with non-zero values makes the camera freeze for about a second after you start moving. This mod keeps every profile on the same high value instead.
+
+[b]Is the camera too twitchy now?[/b] Lower your in-game look sensitivity. The mod removes the smoothing, not your sensitivity setting.
+
+[size=4][b]Credits[/b][/size]
+retoc (trumank), UAssetAPI (atenfyr), UE4SS (UE4SS-RE) and UnrealMappingsDumper (OutTheShade) for the tooling. axbhub's First Person FPP Camera Mode mod for the hint about where the camera lag is stored.

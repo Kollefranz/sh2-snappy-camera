@@ -1,0 +1,23 @@
+SH2 Snappy Camera v{version} (preset: {preset})
+Silent Hill 2 (2024) - PC / Steam
+
+INSTALL
+1. Open your game folder, e.g.
+   ...\steamapps\common\SILENT HILL 2\SHProto\Content\Paks
+2. Create a folder named ~mods there if it does not exist (the ~ is part of the name).
+3. Copy all three files into it:
+   SH2_SnappyCamera_P.pak
+   SH2_SnappyCamera_P.ucas
+   SH2_SnappyCamera_P.utoc
+4. Start the game.
+
+UNINSTALL
+Delete the three files (restart the game). Nothing else is modified.
+
+NOTES
+- Only install ONE preset at a time.
+- Not compatible with other mods that edit ChPlay_CameraProfiles_DA or ChPlay_MovementSettings_DA
+  (for example first-person camera mods). Two mods editing the same asset: the last one loaded wins.
+- A game update can change those assets; if the camera feels wrong after an update, remove the mod and
+  check the mod page for a new version.
+- Save games are not affected.
