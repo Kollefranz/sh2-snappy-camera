@@ -1,0 +1,7 @@
+config.local.json
+dist/
+tools/bin/
+tools/uatool/bin/
+tools/uatool/obj/
+tools/uatool/out/
+__pycache__/
